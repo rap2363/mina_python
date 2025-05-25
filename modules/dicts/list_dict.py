@@ -17,3 +17,9 @@ class ListDict(Dictionary):
                 return data[1]
 
         return None #after iterating through the list
+    
+    def remove(self,key):  #adding a remove since I need it later
+        for data in self.store:
+            if data[0] == key:
+                self.store.remove(data)
+                return
