@@ -1,8 +1,7 @@
-from .sorted_list_dict import SortedListD
-from .list_dict import ListDict
 
+from .dictionary import Dictionary
 class Set:
-    def __init__(self, dict: SortedListD):
+    def __init__(self, dict: Dictionary):
         self._dict = dict
 
     def add(self,value):
@@ -10,16 +9,14 @@ class Set:
         self._dict.add(value,True) 
 
     def contains(self,value):
-        # Check whether the value exists
-        if self._dict.get(value) is not None:
-            return True
-        else :
-            return False
+        # Check whether the value is True
+        return self._dict.get(value) == True
+
     
     def remove(self,value):
-        # Remove the value
-        if self.contains(value) == True :
-            self._dict.remove(value)
+        # Remove the value by setting to false
+        if self.contains(value):
+            self._dict.add(value,False)
         
 
 
