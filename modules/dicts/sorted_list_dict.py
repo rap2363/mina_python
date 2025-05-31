@@ -1,8 +1,37 @@
-from .list_dict import ListDict  #since it's following the same structure
 
-class SortedListD(ListDict):  #inheritance
+from .dictionary import Dictionary  
+
+class SortedListD(Dictionary):
+    def __init__(self):
+        self.SortedL = [] #creating an empty list
 
     def add(self,key,value):
-        super().add(key,value)  #using super so I don't have to duplicate the method
-        self.store.sort() #adding a sort funtion to ensure list is alphabetically orderable
-    
+        left = 0
+        right = len(self.SortedL) -1
+        while left <= right:
+            middle = (left+right)//2
+            
+            if self.SortedL[middle][0] == key:
+                self.SortedL[middle][1] = value
+                return
+            elif self.SortedL[middle][0] < key:
+                left = middle + 1
+            else:
+                right = middle -1
+        #if key not in list
+        self.SortedL.insert(left,[key,value])
+
+    #using a custom function
+    def get(self,key):
+        left = 0
+        right = len(self.SortedL) - 1
+        while left <= right:
+            middle = (left+right)// 2
+        
+            if self.SortedL[middle][0] == key:
+                return self.SortedL[middle][1]
+            elif self.SortedL[middle][0] > key:
+                right = middle - 1
+            elif self.SortedL[middle][0] < key:
+                left = middle + 1
+        return None
