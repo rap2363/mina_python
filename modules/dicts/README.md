@@ -75,4 +75,39 @@ get passed in! Add your implementation to set.py!
 
 ## Assignment 4: Dict as a Hash Map
 
-[I'll fill this out when I get a chance!]
+Now we're going to really get cooking. So far we've been able to leverage the "sortability" of our keys to make accesses/insertions into the dictionary relatively fast. But there's actually an even faster way to do this in principle.
+
+Imagine we have a list of "bins" for our data to go in. Each bin is indexed, 0, 1, 2, 3... up to N-1 for N bins. Now when we want to add a key-value into our dictionary, we'll have to put the key-value in one of our bins. In other words, we need a way to *deterministically* map from a key to a bin index. One way we could do this is to just take the first character of our key (if it's a string), map it to a number (e.g. A-->0, B-->1, C-->2, ..., Z-->25), and then take the *modulus* of that number with the number of bins we have.
+
+In Python, this looks like 
+```
+def get_bin_index(key):
+    return (ord(k[0].lower()) - ord('a')) % N
+```
+### What if two values map to the same bin?
+So for example, if we have two string that start with the same character (or happen to mod to the same bin), we would have a *collision*. There are multiple ways to solve this, but for right now we'll just say we can have a *list* of key-values per bin. So in other words, our bins themselves will be lists that can hold multiple key-values.
+
+
+Implement this in hash_map.py:
+
+```
+class HashMapDictionary(Dictionary):
+    def __init__(self, num_bins):
+        self.num_bins = num_bins
+
+    def add(value):
+        # Add a value to the set
+        ...
+
+    def contains(value):
+        # Check whether the value exists
+        ...
+    
+    def remove(value):
+        # Remove the value
+        ...
+```
+Questions to think through as we get going:
+1. How many bins should we have? How would we know this in advance?
+2. Clearly this would be really bad if we stored a bunch of strings that happened to start with the same character. What are ways we could make this faster by changing how we calculate the bin index for some data?
+3. What happens as we continue adding more and more data to this data structure? What will happen to our lookup times?
