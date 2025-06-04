@@ -38,12 +38,3 @@ class HashMapDictionary(Dictionary):
                     return v
         return None
 
-
-    
-    def remove(self,key):
-        index = self.get_bin_index(key)
-        for i, (k,v) in enumerate(self.bin[index][1]):
-            if k == key:
-                del self.bin[index][1][i]
-                return
-
