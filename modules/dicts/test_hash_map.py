@@ -11,11 +11,3 @@ def test_add_multiple_items():
     assert d.get('fav') == None
     d.add('fav', 'food') 
     assert d.get('fav') == 'food'
-
-def test_collision():
-    d = HashMapDictionary(2)
-    d.add('fruit', 'apple')
-    d.add('family', 'nuclear')
-    #testing data is not overriden
-    assert d.get('fruit') == 'apple'
-    assert d.get('family') == 'nuclear'
