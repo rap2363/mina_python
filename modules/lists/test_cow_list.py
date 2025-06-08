@@ -9,3 +9,6 @@ def test_updating_value():
     print(y) # This should print [1, 2, 3]
     assert x.backing_list == ["hello", 2, 3]
     assert y.backing_list == [1, 2, 3]
+
+    with pytest.raises(TypeError):
+        x[0] = 5

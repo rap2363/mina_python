@@ -16,3 +16,6 @@ class CowList:
         updated_list = self.backing_list[:]     
         updated_list[i] = value
         return CowList(updated_list)
+    
+    def __setitem__(self, i, value):
+        raise TypeError("CowList does not support")
