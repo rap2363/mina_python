@@ -39,18 +39,27 @@ class State:
         return neighbour
 
     def breadth_first_search(self,goal_state):
-
+        goal_state = tuple(goal_state)
         queue = [] # or could be a deque
         queue.append(self.initial_state)
-        visited_states = set([])
-        visited_states.add(self.initial_state)
+        visited_states = set([self.initial_state])
+        
         steps = {}  # To track the different states
 
         while len(queue) > 0:
             current_state = queue.pop(0)
-            if current_state == tuple(goal_state):
-                print(f'The puzzule has been sovle. {current_state}')
-                return current_state
+            if current_state == goal_state:
+                # reconstruct the path path if goal state is reached
+                path = [current_state]
+                while current_state in steps:
+                    current_state = steps[current_state]
+                    path.append(current_state)
+                path.reverse() # to see the path from initial to goal state
+                print('The puzzle has been solved. Steps:')
+                for i in path:
+                    print(i)
+                return path
+                
             
             current = State(current_state)
             neighbors = current.generate_neighbours()
@@ -59,7 +68,7 @@ class State:
                         
                         visited_states.add(n)
                         queue.append(n)
-            
+                        steps[n] = current_state
         print(f'Puzzle not solvable')
 
         return self.initial_state

@@ -6,9 +6,16 @@ def test_breadth_first_search():
     goal_state = [1,2,3,4,5,6,7,8,0]
 
     initial_state = State(x)
-    result = initial_state.breadth_first_search(goal_state)
+    path = initial_state.breadth_first_search(goal_state)
 
-    assert result == tuple(goal_state)
+    expected_path = [
+        (1, 2, 3, 0, 4, 5, 7, 8, 6),
+        (1, 2, 3, 4, 0, 5, 7, 8, 6),
+        (1, 2, 3, 4, 5, 0, 7, 8, 6),
+        (1, 2, 3, 4, 5, 6, 7, 8, 0)
+    ]
+
+    assert path == expected_path
 
     y = [1,2,3,0,4,5,7,8,6]
     goal_state = [1,2,3,4,5,6,7,9,0]
