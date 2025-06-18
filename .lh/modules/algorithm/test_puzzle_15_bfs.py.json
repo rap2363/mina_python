@@ -1,0 +1,26 @@
+{
+    "sourceFile": "modules/algorithm/test_puzzle_15_bfs.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1749672682652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749672688059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import pytest\r\n-from puzzle import State\r\n+from puzzle_15_bfs import State\r\n \r\n def test_breadth_first_search():\r\n     x = [1,2,3,0,4,5,7,8,6]\r\n     goal_state = [1,2,3,4,5,6,7,8,0]\r\n"
+                },
+                {
+                    "date": 1749983411709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import pytest\r\n+from puzzle_15_bfs import State\r\n+\r\n+def test_breadth_first_search():\r\n+    x = [1,2,3,0,4,5,7,8,6]\r\n+    goal_state = [1,2,3,4,5,6,7,8,0]\r\n+\r\n+    initial_state = State(x)\r\n+    result = initial_state.breadth_first_search(goal_state)\r\n+\r\n+    assert result == goal_state\r\n+\r\n+    y = [1,2,3,0,4,5,7,8,6]\r\n+    goal_state = [1,2,3,4,5,6,7,9,0]\r\n+\r\n+    initial_state = State(y)\r\n+    result = initial_state.breadth_first_search(goal_state)\r\n+\r\n+    assert result == y\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1749672682652,
+            "name": "Commit-0",
+            "content": "import pytest\r\nfrom  import State\r\n\r\ndef test_breadth_first_search():\r\n    x = [1,2,3,0,4,5,7,8,6]\r\n    goal_state = [1,2,3,4,5,6,7,8,0]\r\n\r\n    initial_state = State(x)\r\n    result = initial_state.breadth_first_search(x,goal_state)\r\n\r\n    assert result == goal_state\r\n\r\n    y = [1,2,3,0,4,5,7,8,6]\r\n    goal_state = [1,2,3,4,5,6,7,9,0]\r\n\r\n    initial_state = State(y)\r\n    result = initial_state.breadth_first_search(y,goal_state)\r\n\r\n    assert result == y"
+        }
+    ]
+}

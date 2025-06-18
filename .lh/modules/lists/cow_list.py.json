@@ -1,0 +1,34 @@
+{
+    "sourceFile": "modules/lists/cow_list.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1749327127036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749327144593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+        self.updated_list = copy.deepcopy(self.backing_list)\r\n+\r\n+    def append(self, item):\r\n+        modified_list = copy.deepcopy(self.updated_list)\r\n+        modified_list.append(item)\r\n+        return ImmutableList(modified_list)\r\n+\r\n+    def __getitem__(self, i):\r\n+        return self.updated_list[i]\r\n+    \r\n+    ##doesn't the concept of __setitem__ defeat the purpose of immutablity here?\r\n+    def __setitem__(self, i, value):\r\n+        raise TypeError(\"ImmutableList does not support\")\r\n"
+                },
+                {
+                    "date": 1749327172322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+\r\n+\r\n class ImmutableList:\r\n     def __init__(self, input_list):\r\n         self.backing_list = input_list\r\n         self.updated_list = copy.deepcopy(self.backing_list)\r\n"
+                },
+                {
+                    "date": 1749327177749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import cop\r\n+import copy\r\n \r\n class ImmutableList:\r\n     def __init__(self, input_list):\r\n         self.backing_list = input_list\r\n"
+                },
+                {
+                    "date": 1749327186324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+import copy\r\n+\r\n+class CowList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+        self.updated_list = copy.deepcopy(self.backing_list)\r\n+\r\n+    def append(self, item):\r\n+        modified_list = copy.deepcopy(self.updated_list)\r\n+        modified_list.append(item)\r\n+        return ImmutableList(modified_list)\r\n+\r\n+    def __getitem__(self, i):\r\n+        return self.updated_list[i]\r\n+    \r\n+    ##doesn't the concept of __setitem__ defeat the purpose of immutablity here?\r\n+    def __setitem__(self, i, value):\r\n+        raise TypeError(\"ImmutableList does not support\")\r\n"
+                }
+            ],
+            "date": 1749327127036,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

@@ -24,3 +24,13 @@ def test_breadth_first_search():
     result = initial_state.breadth_first_search(goal_state)
 
     assert result == tuple(y)
+
+def test_shuffle():
+    x = [1,2,3,0,4,5,7,8,6]
+   
+    shuffled = State(x)
+    x = shuffled.initial_state
+
+    shuffled.shuffle(moves=5)
+
+    assert shuffled.initial_state != x

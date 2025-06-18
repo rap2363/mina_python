@@ -1,0 +1,90 @@
+{
+    "sourceFile": "modules/lists/puzzle_15.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1749503132983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749503157656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+\r\n"
+                },
+                {
+                    "date": 1749503163249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,2 @@\n+\r\n+puzzle\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503170840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,2 @@\n+\r\n+puzzle = {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503177321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+\r\n+puzzle = {\r\n+    1\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503188090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1749503195540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial node\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503204711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n puzzle = {\r\n     \r\n }\r\n \r\n-initial node\n\\ No newline at end of file\n+initial_node\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503214325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = ()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503240120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = ()0,7\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503246111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = (0,7)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503251796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = (0,7,11,12)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503256945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = (0,7,11,12,1,6)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503263339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = (0,7,11,12,1,6,10,13)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503269791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = (0,7,11,12,1,6,10,13,14,9,)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503276415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = (0,7,11,12,1,6,10,13,14,9,5,2,15,)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503281708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = (0,7,11,12,1,6,10,13,14,9,5,2,15,8,4,)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503304574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,7 @@\n puzzle = {\r\n     \r\n }\r\n \r\n-initial_node = (0,7,11,12,1,6,10,13,14,9,5,2,15,8,4,3)\n\\ No newline at end of file\n+initial_node = (0,7,11,12,1,6,10,13,14,9,5,2,15,8,4,3)\r\n+\r\n+final\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749503313837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+puzzle = {\r\n+    \r\n+}\r\n+\r\n+initial_node = (0,7,11,12,1,6,10,13,14,9,5,2,15,8,4,3)\r\n+\r\n+final_node = \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1749503132983,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

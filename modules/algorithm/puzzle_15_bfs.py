@@ -1,4 +1,6 @@
+import random
 class State:
+
     def __init__(self, initial_state):
         self.initial_state = tuple(initial_state)
 
@@ -38,6 +40,19 @@ class State:
                 neighbour.append(tuple(new_initial_state)) #making it hashable
         return neighbour
 
+
+    def shuffle(self,moves=10):
+        current_state = self.initial_state
+        while True:
+            for i in range(moves):
+                temp = State(current_state)
+                neighbor = temp.generate_neighbours()
+                current_state = random.choice(neighbor)
+            
+            if current_state != self.initial_state :
+                 break
+        self.initial_state = current_state
+        
     def breadth_first_search(self,goal_state):
         goal_state = tuple(goal_state)
         queue = [] # or could be a deque
