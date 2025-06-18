@@ -1,0 +1,86 @@
+{
+    "sourceFile": "modules/lists/immutable_list.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1749321603165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749321611055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+    \r\n+    def append(self, item):\r\n+        # Implement!\r\n+    \r\n+    def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    def __setitem__(self, i, value):\r\n+        # Implement!\r\n"
+                },
+                {
+                    "date": 1749321618902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+    \r\n+    def append(self, item):\r\n+        # Implement!\r\n+    \r\n+    def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    def __setitem__(self, i, value):\r\n+        # Implement!\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749321702399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+    \r\n+    def append(self, item):\r\n+        # Implement!\r\n+    \r\n+    def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    def __setitem__(self, i, value):\r\n+        # Implement!\r\n+\r\n"
+                },
+                {
+                    "date": 1749322606740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,54 +2,17 @@\n class ImmutableList:\r\n     def __init__(self, input_list):\r\n         self.backing_list = input_list\r\n     \r\n-    def append(self, item):\r\n+    #def append(self, item):\r\n         # Implement!\r\n     \r\n     def __getitem__(self, i):\r\n         # Implement!\r\n     \r\n     def __setitem__(self, i, value):\r\n         # Implement!\r\n \r\n-\r\n-class ImmutableList:\r\n-    def __init__(self, input_list):\r\n-        self.backing_list = input_list\r\n-    \r\n-    def append(self, item):\r\n-        # Implement!\r\n-    \r\n-    def __getitem__(self, i):\r\n-        # Implement!\r\n-    \r\n-    def __setitem__(self, i, value):\r\n-        # Implement!\n-\r\n-class ImmutableList:\r\n-    def __init__(self, input_list):\r\n-        self.backing_list = input_list\r\n-    \r\n-    def append(self, item):\r\n-        # Implement!\r\n-    \r\n-    def __getitem__(self, i):\r\n-        # Implement!\r\n-    \r\n-    def __setitem__(self, i, value):\r\n-        # Implement!\r\n-\r\n-```\r\n-class ImmutableList:\r\n-    def __init__(self, input_list):\r\n-        self.backing_list = input_list\r\n-    \r\n-    def append(self, item):\r\n-        # Implement!\r\n-    \r\n-    def __getitem__(self, i):\r\n-        # Implement!\r\n-    \r\n-    def __setitem__(self, i, value):\r\n-        # Implement!\r\n\\ No newline at end of file\n-```\n+x = ImmutableList([1, \"hello\", 3])\r\n+y = x\r\n+print(x[1]) # Prints \"hello\"\r\n+y[0] = 5 # error!!\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749322613754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,12 @@\n     \r\n     #def append(self, item):\r\n         # Implement!\r\n     \r\n-    def __getitem__(self, i):\r\n+    #def __getitem__(self, i):\r\n         # Implement!\r\n     \r\n-    def __setitem__(self, i, value):\r\n+    #def __setitem__(self, i, value):\r\n         # Implement!\r\n \r\n x = ImmutableList([1, \"hello\", 3])\r\n y = x\r\n"
+                },
+                {
+                    "date": 1749322636262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n class ImmutableList:\r\n     def __init__(self, input_list):\r\n         self.backing_list = input_list\r\n     \r\n-    #def append(self, item):\r\n+    def append(self, item):\r\n         # Implement!\r\n     \r\n     #def __getitem__(self, i):\r\n         # Implement!\r\n"
+                },
+                {
+                    "date": 1749322697058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n     def __init__(self, input_list):\r\n         self.backing_list = input_list\r\n     \r\n     def append(self, item):\r\n-        # Implement!\r\n-    \r\n+        \r\n+        \r\n     #def __getitem__(self, i):\r\n         # Implement!\r\n     \r\n     #def __setitem__(self, i, value):\r\n"
+                },
+                {
+                    "date": 1749322713029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n     def __init__(self, input_list):\r\n         self.backing_list = input_list\r\n     \r\n     def append(self, item):\r\n-        \r\n-        \r\n+        i\r\n+\r\n     #def __getitem__(self, i):\r\n         # Implement!\r\n     \r\n     #def __setitem__(self, i, value):\r\n"
+                },
+                {
+                    "date": 1749322718914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     def __init__(self, input_list):\r\n         self.backing_list = input_list\r\n     \r\n     def append(self, item):\r\n-        i\r\n+        input\r\n \r\n     #def __getitem__(self, i):\r\n         # Implement!\r\n     \r\n"
+                },
+                {
+                    "date": 1749322726189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+    \r\n+    def append(self, item):\r\n+        input_list = new\r\n+\r\n+    #def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    #def __setitem__(self, i, value):\r\n+        # Implement!\r\n+\r\n+x = ImmutableList([1, \"hello\", 3])\r\n+y = x\r\n+print(x[1]) # Prints \"hello\"\r\n+y[0] = 5 # error!!\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749322732403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+    \r\n+    def append(self, item):\r\n+        input_list = updated\r\n+\r\n+    #def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    #def __setitem__(self, i, value):\r\n+        # Implement!\r\n+\r\n+x = ImmutableList([1, \"hello\", 3])\r\n+y = x\r\n+print(x[1]) # Prints \"hello\"\r\n+y[0] = 5 # error!!\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749322738361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+    \r\n+    def append(self, item):\r\n+        input_list = updated_\r\n+\r\n+    #def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    #def __setitem__(self, i, value):\r\n+        # Implement!\r\n+\r\n+x = ImmutableList([1, \"hello\", 3])\r\n+y = x\r\n+print(x[1]) # Prints \"hello\"\r\n+y[0] = 5 # error!!\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749322745082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+    \r\n+    def append(self, item):\r\n+        input_list = updated_input_list\r\n+\r\n+    #def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    #def __setitem__(self, i, value):\r\n+        # Implement!\r\n+\r\n+x = ImmutableList([1, \"hello\", 3])\r\n+y = x\r\n+print(x[1]) # Prints \"hello\"\r\n+y[0] = 5 # error!!\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749322764399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+        \r\n+    \r\n+    def append(self, item):\r\n+        input_list = updated_input_list\r\n+\r\n+\r\n+    #def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    #def __setitem__(self, i, value):\r\n+        # Implement!\r\n+\r\n+x = ImmutableList([1, \"hello\", 3])\r\n+y = x\r\n+print(x[1]) # Prints \"hello\"\r\n+y[0] = 5 # error!!\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749322769808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+        input_\r\n+    \r\n+    def append(self, item):\r\n+        input_list = updated_input_list\r\n+\r\n+\r\n+    #def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    #def __setitem__(self, i, value):\r\n+        # Implement!\r\n+\r\n+x = ImmutableList([1, \"hello\", 3])\r\n+y = x\r\n+print(x[1]) # Prints \"hello\"\r\n+y[0] = 5 # error!!\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749322775011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n \r\n class ImmutableList:\r\n     def __init__(self, input_list):\r\n         self.backing_list = input_list\r\n-        input_list = \r\n+        input_list = []\r\n     \r\n     def append(self, item):\r\n         input_list = updated_input_list\r\n \r\n"
+                },
+                {
+                    "date": 1749322795979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+\r\n+class ImmutableList:\r\n+    def __init__(self, input_list):\r\n+        self.backing_list = input_list\r\n+        input_list = []\r\n+    \r\n+    def append(self, item):\r\n+        input_list = updated_input_list\r\n+        \r\n+\r\n+\r\n+    #def __getitem__(self, i):\r\n+        # Implement!\r\n+    \r\n+    #def __setitem__(self, i, value):\r\n+        # Implement!\r\n+\r\n+x = ImmutableList([1, \"hello\", 3])\r\n+y = x\r\n+print(x[1]) # Prints \"hello\"\r\n+y[0] = 5 # error!!\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1749321603165,
+            "name": "Commit-0",
+            "content": "\r\n```\r\nclass ImmutableList:\r\n    def __init__(self, input_list):\r\n        self.backing_list = input_list\r\n    \r\n    def append(self, item):\r\n        # Implement!\r\n    \r\n    def __getitem__(self, i):\r\n        # Implement!\r\n    \r\n    def __setitem__(self, i, value):\r\n        # Implement!\r\n```"
+        }
+    ]
+}

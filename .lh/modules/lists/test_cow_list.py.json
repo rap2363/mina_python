@@ -1,0 +1,42 @@
+{
+    "sourceFile": "modules/lists/test_cow_list.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1749328132183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749328139407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+import pytest\r\n+from .cow_list im\r\n+\r\n+x = CowList([1, 2, 3])\r\n+y = x\r\n+x = x.set_value(0, \"hello\")\r\n+print(x) # This should print [\"hello\", 2, 3]\r\n+print(y) # This should print [1, 2, 3]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749328149622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+import pytest\r\n+from .cow_list import CowList\r\n+\r\n+\r\n+x = CowList([1, 2, 3])\r\n+y = x\r\n+x = x.set_value(0, \"hello\")\r\n+print(x) # This should print [\"hello\", 2, 3]\r\n+print(y) # This should print [1, 2, 3]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749328168019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+import pytest\r\n+from .cow_list import CowList\r\n+\r\n+def se\r\n+x = CowList([1, 2, 3])\r\n+y = x\r\n+x = x.set_value(0, \"hello\")\r\n+print(x) # This should print [\"hello\", 2, 3]\r\n+print(y) # This should print [1, 2, 3]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749328174538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+import pytest\r\n+from .cow_list import CowList\r\n+\r\n+def updating_\r\n+x = CowList([1, 2, 3])\r\n+y = x\r\n+x = x.set_value(0, \"hello\")\r\n+print(x) # This should print [\"hello\", 2, 3]\r\n+print(y) # This should print [1, 2, 3]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749328181553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n x = CowList([1, 2, 3])\r\n y = x\r\n x = x.set_value(0, \"hello\")\r\n print(x) # This should print [\"hello\", 2, 3]\r\n-print(y) # This should print [1, 2, \n\\ No newline at end of file\n+print(y) # This should print [1, 2, 3]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1749328193025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+import pytest\r\n+from .cow_list import CowList\r\n+\r\n+def testupdating_value()\r\n+x = CowList([1, 2, 3])\r\n+y = x\r\n+x = x.set_value(0, \"hello\")\r\n+print(x) # This should print [\"hello\", 2, 3]\r\n+print(y) # This should print [1, 2, 3]\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1749328132183,
+            "name": "Commit-0",
+            "content": "import pytest\r\nfrom \r\n\r\nx = CowList([1, 2, 3])\r\ny = x\r\nx = x.set_value(0, \"hello\")\r\nprint(x) # This should print [\"hello\", 2, 3]\r\nprint(y) # This should print [1, 2, 3]"
+        }
+    ]
+}
