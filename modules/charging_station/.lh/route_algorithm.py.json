@@ -1,0 +1,18 @@
+{
+    "sourceFile": "route_algorithm.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1752309525575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1752309525575,
+            "name": "Commit-0",
+            "content": "'''\r\n\r\n\r\nThoughts:\r\nvalid path from start to finish\r\n1. segment where total distance is less than C between recharge. Only move along path where distance within two nodes is less than C meters\r\n2. stop at charging stations when needed\r\n3. lowest possible distance from start to finish (regardless of no of stops/refilling)\r\n\r\n** keep track of remaining distance at every point in time?\r\n'''\r\n\r\nimport heapq\r\n\r\ndef dijkstra(graph, start):\r\n    # Set initial distances to infinity, except for start node\r\n    distances = {}\r\n    for node in graph:\r\n        distances[node] = float('inf')\r\n    distances[start] = 0\r\n   \r\n    predecessors = {} #tracking path\r\n    for node in graph:\r\n        predecessors[node] = None\r\n    \r\n    #using priority queue to track (distance,node)\r\n    priority_queue = [(0, start)]  \r\n    \r\n\r\n    while priority_queue:\r\n        current_distance, current_node = heapq.heappop(priority_queue) #remove node with least distance from queue\r\n\r\n        #if currrent distance is greater than stored distance skip\r\n        if current_distance > distances[current_node]:\r\n            continue\r\n        \r\n        #Update distances to neighbors\r\n        for neighbor, weight in graph[current_node].items():\r\n            new_distance = current_distance + weight\r\n            \r\n            # If new distance is shorter, update it\r\n            if new_distance < distances[neighbor]:\r\n                distances[neighbor] = new_distance\r\n                predecessors[neighbor] = current_node\r\n                heapq.heappush(priority_queue, (new_distance, neighbor))\r\n    \r\n    return distances, predecessors\r\n\r\ndef reconstruct_path(predecessors, start, end):\r\n    path = []\r\n    current = end\r\n\r\n    while current is not None:\r\n        path.append(current)\r\n        current = predecessors[current]\r\n    \r\n    path.reverse()\r\n    if path[0]== start:\r\n        return path\r\n    else:\r\n        return [] \r\n\r\n#finding shortest distance between charging stations\r\ndef shortest_dist_between_stations(graph, stations):\r\n    station_distances = {}\r\n    for s in stations:\r\n        station_distances[s] = {}\r\n    \r\n    station_predecessors = {}\r\n    for s in stations:\r\n        station_predecessors[s] = {}\r\n\r\n    for source_station in stations:\r\n        dist, pred = dijkstra(graph,source_station)\r\n        for target_station in stations:\r\n            if target_station != source_station:\r\n                station_distances[source_station][target_station] = dist.get(target_station, float('inf'))\r\n                station_predecessors[source_station][target_station] = pred\r\n    \r\n    return station_distances,station_predecessors\r\n\r\n#build a reduced graph with nodes if distance <= capacity\r\ndef build_reduced_graph(station_distances,capacity):\r\n    reduced_graph = {}\r\n    for s in station_distances:\r\n        reduced_graph[s] = {}\r\n\r\n    for s, neighbors in station_distances.items():\r\n        for t, dist in neighbors.items():\r\n            if dist <= capacity:\r\n                reduced_graph[s][t] = dist\r\n\r\n    return reduced_graph\r\n\r\n"
+        }
+    ]
+}
