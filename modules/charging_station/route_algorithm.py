@@ -10,27 +10,29 @@ valid path from start to finish
 
 import heapq
 
-def dijkstra(graph, start):
+def dijkstra(graph, start, goal):
     # Set initial distances to infinity, except for start node
     distances = {}
     for node in graph:
         distances[node] = float('inf')
     distances[start] = 0
    
-    predecessors = {} #tracking path
+    predecessors = {} 
     for node in graph:
         predecessors[node] = None
     
     #using priority queue to track (distance,node)
     priority_queue = [(0, start)]  
-    
+    visited = set()
 
     while priority_queue:
         current_distance, current_node = heapq.heappop(priority_queue) #remove node with least distance from queue
-
-        #if currrent distance is greater than stored distance skip
-        if current_distance > distances[current_node]:
+        if current_node in visited:
             continue
+        visited.add(current_node)
+
+        if current_node == goal:
+            break
         
         #Update distances to neighbors
         for neighbor, weight in graph[current_node].items():
@@ -44,9 +46,9 @@ def dijkstra(graph, start):
     
     return distances, predecessors
 
-def reconstruct_path(predecessors, start, end):
+def shortest_path(predecessors, start, goal):
     path = []
-    current = end
+    current = goal
 
     while current is not None:
         path.append(current)
@@ -57,36 +59,4 @@ def reconstruct_path(predecessors, start, end):
         return path
     else:
         return [] 
-
-#finding shortest distance between charging stations
-def shortest_dist_between_stations(graph, stations):
-    station_distances = {}
-    for s in stations:
-        station_distances[s] = {}
-    
-    station_predecessors = {}
-    for s in stations:
-        station_predecessors[s] = {}
-
-    for source_station in stations:
-        dist, pred = dijkstra(graph,source_station)
-        for target_station in stations:
-            if target_station != source_station:
-                station_distances[source_station][target_station] = dist.get(target_station, float('inf'))
-                station_predecessors[source_station][target_station] = pred
-    
-    return station_distances,station_predecessors
-
-#build a reduced graph with nodes if distance <= capacity
-def build_reduced_graph(station_distances,capacity):
-    reduced_graph = {}
-    for s in station_distances:
-        reduced_graph[s] = {}
-
-    for s, neighbors in station_distances.items():
-        for t, dist in neighbors.items():
-            if dist <= capacity:
-                reduced_graph[s][t] = dist
-
-    return reduced_graph
 
